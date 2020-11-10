@@ -1,4 +1,7 @@
-body{background-image:url("doctor.jpeg");
-       background-repeat: no-repeat;
-       background-attachment: fixed;
+body
+{
+	background-image:url("doctor.jpeg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
+
