@@ -1,21 +1,22 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
     <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
-         <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
         <!--jQuery library--> 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
         <!--Latest compiled and minified JavaScript--> 
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="mystylesheet.css">
+                 <link rel="stylesheet" type="text/css" href="mystylesheet.css">
         
-        <title>Virtual Medical Home</title>
+        <title>Admin Login</title>
                  
     </head>
     <body>
-       <nav class="navbar navbar-inverse navbar-fixed-top">
+  <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
               <div class="navbar-header">
            
@@ -30,5 +31,17 @@
                     </ul>
                 </div>
         </nav>
-   </body>
-</html>
+            <br><br>     
+            <div>
+            <center>
+             <img alt="hero" src="https://www.freeiconspng.com/thumbs/login-icon/user-login-icon-14.png">
+             <p style="font-size:54px;color:black;"> LOGIN FOR ADMIN</p>
+             
+             <a href="adminlogin.jsp" ><input type="button" id="btn" value="Login"/></a>
+            </center>
+            </div>
+                 
+                 
+      
+    </body>
+                       </body>
