@@ -15,7 +15,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
                  <link rel="stylesheet" type="text/css" href="mystylesheet.css">
         
-        <title>Admin Login</title>
+        <title>Login</title>
                  
     </head>
     <body>
@@ -26,32 +26,41 @@
                     <a class="navbar-brand" href="Index.html">Virtual Medical Home </a>
                 </div>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="Index.html"><span class="glyphicon glyphicon-home"></span> HOME</a></li>
-                        <li><a href="admin.jsp"><span class="glyphicon glyphicon-user"></span> ADMIN</a></li>
-                        <li><a href="user.jsp"><span class="glyphicon glyphicon-log-in"></span> USER</a></li>
-                        <li><a href="doctor.jsp"><span class="glyphicon glyphicon-log-in"></span> DOCTOR</a></li>
+                         <li><a href="Index.html"><span class="glyphicon glyphicon-home"></span> HOME</a></li>
+                        <li><a href="login.jsp"><span class="glyphicon glyphicon-user"></span> LOG IN</a></li>
+                        <li><a href="signup.jsp"><span class="glyphicon glyphicon-log-in"></span> SIGN UP</a></li>
                          <li><a href="about.jsp"><span class="glyphicon glyphicon-info-sign"></span> ABOUT US</a></li>
                     </ul>
                 </div>
         </nav><br><br><br><br><br>
- <form method="get" action="http://localhost:8082/VirtualMedicalHome/adminServlet">
+ <form method="get" action="http://localhost:8080/VirtualMedicalHome/LoginServlet">
      
 
 <center>
 <table style="background-color:rgba (0, 0, 0, 0.5);" border="3" >
-  <tr><th colspan="2">ADMIN LOGIN</th></tr>
-        <tr><td> Admin Id :</td>
+  <tr><th colspan="2">LOGIN</th></tr>
+        <tr><td>  Id :</td>
             <td><input type="text" name="id" required/></td>
         </tr>
-        <tr><td> Admin Password :</td>
+        <tr><td>  Password :</td>
             <td><input type="password" name="pass" required/></td>
         </tr>
+        <tr><td>ROLE:-<td>ADMIN:<input type="radio" name="rad" value="admin" />
+                          PATIENT:<input type="radio" name="rad" value="patient" />
+                          DOCTOR:<input type="radio" name="rad" value="doctor" /></td>
       
 
   <tr><td colspan="2"><input type="submit" name="s1" id="btn" value="Submit"/></td></tr>
-  
-     </table></center><hr>
+  </table></center><br>
+     </form>   
+     <center>
+     <h3>Not a Member?</h3>
+    <a href="signup.jsp"><input type="submit" name="s2" id="btn" value="Register"/></a>
      
-     </form>              
+     </center>
+     
+     
+     
+                
 </body>
 </html>

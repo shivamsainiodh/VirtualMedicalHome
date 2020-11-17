@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
-    <head>
+<head>
        <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
@@ -11,14 +11,15 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
         <meta name="viewport" content="width=device-width, initial-scale=1">
                  <link rel="stylesheet" type="text/css" href="mystylesheet.css">
         
-        <title>Admin Login</title>
+        <title>Signup</title>
                  
     </head>
     <body>
-  <nav class="navbar navbar-inverse navbar-fixed-top">
+ <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
               <div class="navbar-header">
            
@@ -26,24 +27,20 @@
                 </div>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="Index.html"><span class="glyphicon glyphicon-home"></span> HOME</a></li>
-                        <li><a href="admin.jsp"><span class="glyphicon glyphicon-user"></span> ADMIN</a></li>
-                        <li><a href="user.jsp"><span class="glyphicon glyphicon-log-in"></span> USER</a></li>
-                        <li><a href="doctor.jsp"><span class="glyphicon glyphicon-log-in"></span> DOCTOR</a></li>
+                        <li><a href="login.jsp"><span class="glyphicon glyphicon-user"></span> LOG IN</a></li>
+                        <li><a href="signup.jsp"><span class="glyphicon glyphicon-log-in"></span> SIGN UP</a></li>
                          <li><a href="about.jsp"><span class="glyphicon glyphicon-info-sign"></span> ABOUT US</a></li>
                     </ul>
                 </div>
-        </nav>
-            <br><br>     
-            <div>
-            <center>
-             <img alt="hero" src="https://www.freeiconspng.com/thumbs/login-icon/user-login-icon-14.png">
-             <p style="font-size:54px;color:black;"> LOGIN FOR ADMIN</p>
-             
-             <a href="adminlogin.jsp"> <img alt="content" style="width:300px;height:100px;" src="https://www.freeiconspng.com/uploads/login-button-png-6.png"></a>
-            </center>
-            </div>
-                 
-                 
-      
-    </body>
-                       </body>
+        </nav><br><br><br><br><br>
+ <center>
+    <a href="doctorsignup.jsp"><input type="submit" name="s2" id="btn" value="For Doctor Registraion Click Here"/></a></br></br>
+    <a href="patientsignup.jsp"><input type="submit" name="s2" id="btn" value="For Patient Registraion Click Here"/></a>
+     
+     </center>
+     
+     
+     
+                
+</body>
+</html>

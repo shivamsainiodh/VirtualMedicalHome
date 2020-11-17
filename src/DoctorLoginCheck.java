@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
-
 import java.sql.ResultSet;
 import java.sql.Statement;
 
@@ -17,19 +16,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-
 /**
- * Servlet implementation class adminServlet
+ * Servlet implementation class DoctorLoginCheck
  */
-@WebServlet("/adminServlet")
-public class adminServlet extends HttpServlet {
+@WebServlet("/DoctorLoginCheck")
+public class DoctorLoginCheck extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	ServletContext ctx;
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public adminServlet() {
+    public DoctorLoginCheck() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -42,13 +39,15 @@ public class adminServlet extends HttpServlet {
 		ctx=config.getServletContext();
 	}
 
-	
 	/**
 	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
 	 */
-	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
+		
+		
+		
 		String emailid=request.getParameter("id");
 		String pass=request.getParameter("pass");
 		PrintWriter pw=response.getWriter();
@@ -58,7 +57,7 @@ public class adminServlet extends HttpServlet {
 					Class.forName("com.mysql.jdbc.Driver");
 				    Connection	con = DriverManager.getConnection("jdbc:mysql://localhost:3306/virtualmedicalhome","root","SHIVAM000#");
 				    Statement stmt=con.createStatement();
-				    ResultSet rs=stmt.executeQuery("select * from admin");
+				    ResultSet rs=stmt.executeQuery("select * from doctor");
 				    int flag=0;
 					while(rs.next())
 					{
@@ -66,14 +65,14 @@ public class adminServlet extends HttpServlet {
 						if(rs.getString(1).equals(emailid) && rs.getString(2).equals(pass))
 						{
 							flag=1;
-							rdis=ctx.getRequestDispatcher("/adminHomepage.jsp");
+							rdis=ctx.getRequestDispatcher("/DoctorHomePage.jsp");
 							rdis.forward(request,response);
 						
 					    }
 					}
 					if(flag==0)
 					{
-						pw.println("Admin details are Incorrect");
+						pw.println("Doctor Details are Incorrect");
 					}
 			
 			}
@@ -83,7 +82,9 @@ public class adminServlet extends HttpServlet {
 			}
 		}
 		
-	
+		
+		
+		
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
