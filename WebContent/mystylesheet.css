@@ -22,14 +22,12 @@ th {
   color: white;
 height: 50px;
   text-align: center;
+  color: white;
 }
 td {
   text-align: center;
+   color: blue;
 }
 table, th, td {
   border: 1px solid black;
-}
-table {
-  width: 50%;
-  height: 50%;
 }

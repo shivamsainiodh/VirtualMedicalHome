@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ page import="javax.servlet.http.HttpSession" %>
+     <%@ page import="java.sql.ResultSet" %>
+      
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +11,11 @@
 <%   HttpSession mySession;
 mySession=request.getSession(true);
 String Name=(String)mySession.getAttribute("NAME");
+
+
+ResultSet rs=(ResultSet)mySession.getAttribute("rs");
+
+
 %>
 
        <!-- Latest compiled and minified CSS -->
@@ -23,7 +30,7 @@ String Name=(String)mySession.getAttribute("NAME");
         <meta name="viewport" content="width=device-width, initial-scale=1">
                  <link rel="stylesheet" type="text/css" href="mystylesheet.css">
         
-        <title>Login</title>
+        <title></title>
                  
     </head>
     <body>
@@ -40,12 +47,57 @@ String Name=(String)mySession.getAttribute("NAME");
                         
                     </ul>
                 </div>
-        </nav><br><br><br><br><br>
+        </nav><br><br><br><br><br> <center>
         
-        <a href="http://localhost:8080/VirtualMedicalHome/DoctorListServlet"><input type="button" id="btn" value="see doctor list"/></a>
+       <form method="get" action="http://localhost:8080/VirtualMedicalHome/AppointmentSave">
         
-        
-        
+       
+<table style="background-color:rgba (0, 0, 0, 0.5);" border="3" >
+  <tr><th colspan="9">Doctor List</th></tr>
+  <tr><th> Doctor Id :</th>
+       <th> Doctor Name :</th>
+       <th> Doctor Address :</th>
+       <th> Doctor Gender :</th>
+       <th> Doctor Phone :</th>
+       <th> Doctor Qualification :</th>
+       <th> Doctor Experience(in years) :</th>
+       <th> Doctor Specialization :</th>
+       <th>Book Appointment</th>
+       </tr>
+
+
+    <% while(rs.next())
+    	{
+    	%>
+          <tr><td><%out.println(rs.getString(1));%></td>
+   
+              <td><%out.println(rs.getString(4));%></td>
+            <td><%out.println(rs.getString(5));%></td>
+    
+            <td><%out.println(rs.getString(6));%></td>
+      
+            <td><%out.println(rs.getString(7));%></td>
+    
+            <td><%out.println(rs.getString(8));%></td>
+      
+            <td><%out.println(rs.getString(9));%></td>
+  
+            <td><%out.println(rs.getString(10));%></td>
+            <td><input type="submit" id="btn" name="submit" value="Book with <%=rs.getString(1)%>"/></td>
+        </tr>
+      
+    	
+    	<% 
+    	}
+    	%>
+    	
+    	
+    	
+    	
+     </table>
+      
+        </form>
+         </center> 
 </body>
 
 </html>

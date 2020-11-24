@@ -35,8 +35,8 @@ String Name=(String)mySession.getAttribute("NAME");
                 </div>
                     <ul class="nav navbar-nav navbar-right">
                          
-                        <li><a href="adminHomepage.jsp"><span class="glyphicon glyphicon-user"></span>Welcome <%out.println(Name); %></a></li>
-                        <li><a href="logout.jsp"><span class="glyphicon glyphicon-log-out"></span>log out</a></li>
+                        <li><a href="adminHomepage.jsp"><span class="glyphicon glyphicon-user"></span> WELCOME <%out.println(Name); %></a></li>
+                        <li><a href="http://localhost:8080/VirtualMedicalHome/LogoutServlet"><span class="glyphicon glyphicon-log-out"></span>log out</a></li>
                         
                     </ul>
                 </div>

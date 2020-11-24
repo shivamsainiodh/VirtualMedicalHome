@@ -108,7 +108,8 @@ public class LoginServlet extends HttpServlet {
 							if(rs.getString(1).equals(emailid) && rs.getString(2).equals(pass))
 							{
 								flag=1;
-								mySession.setAttribute("NAME",rs.getString(3));
+								mySession.setAttribute("ID",rs.getString(1));
+								mySession.setAttribute("NAME",rs.getString(4));
 								rdis=ctx.getRequestDispatcher("/patientHomepage.jsp");
 								rdis.forward(request,response);
 							
@@ -140,7 +141,7 @@ public class LoginServlet extends HttpServlet {
 							if(rs.getString(1).equals(emailid) && rs.getString(2).equals(pass))
 							{
 								flag=1;
-								mySession.setAttribute("NAME",rs.getString(3));
+								mySession.setAttribute("NAME",rs.getString(4));
 								rdis=ctx.getRequestDispatcher("/DoctorHomePage.jsp");
 								rdis.forward(request,response);
 							
