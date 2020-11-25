@@ -1,0 +1,33 @@
+body{background-image:url("https://images.pexels.com/photos/3985166/pexels-photo-3985166.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+       background-repeat: no-repeat;
+       background-attachment: fixed;
+}
+
+#btn {
+  border: 2px solid white;
+  background-color: aqua;
+  color: black;
+  padding: 10px 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#btn:hover {
+  background: #2196F3;
+  color: black;
+}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+height: 50px;
+  text-align: center;
+  color: white;
+}
+td {
+  text-align: center;
+   color: blue;
+}
+table, th, td {
+  border: 1px solid black;
+}
