@@ -97,6 +97,51 @@ public class DoctorDAO {
 	return flag;
 	}
 	
+	
+	
+	
+	
+	
+	
+	public boolean updateDoctor(Doctor dd)
+	{
+		boolean flag=false;
+	
+		con=mycon.getMyConnection();
+		try
+		{
+			PreparedStatement pstmt=con.prepareStatement("update doctor set password=?,confirmPassword=?,name=?,address=?,gender=?,phone=?,qualification=?,experience=?,specialization=?  where doctorId=?");
+			
+			
+			
+			pstmt.setString(1,dd.getPassword());
+			pstmt.setString(2,dd.getConfirmPassword());
+			pstmt.setString(3,dd.getName());
+			pstmt.setString(4,dd.getAddress());
+			pstmt.setString(5,dd.getGender());
+			pstmt.setString(6,dd.getPhone());
+			pstmt.setString(7,dd.getQualification());
+			pstmt.setInt(8,dd.getExperience());
+			pstmt.setString(9,dd.getSpecialization());
+			
+			
+			pstmt.setString(10,dd.getDoctorId());
+			pstmt.execute();
+			flag=true;
+			
+			
+		}
+		catch(Exception ex)
+		{
+			ex.printStackTrace();
+			flag=false;
+			
+		}
+	return flag;
+	}
+	
+	
+	
 }
 	
 /*
@@ -125,35 +170,6 @@ public class DoctorDAO {
 	
 
 	
-	
-	public boolean updateEmployee(Employee empu)
-	{
-		boolean flag=false;
-	
-		con=mycon.getMyConnection();
-		try
-		{
-			PreparedStatement pstmt=con.prepareStatement("update employee set EmployeeName=?,Address=?,phone=?  where Employeeid=?");
-			
-			
-			
-			pstmt.setString(1,empu.getEname());
-			pstmt.setString(2,empu.getEadd());
-			pstmt.setString(3,empu.getEphone());
-			pstmt.setString(4,empu.getEid());
-			pstmt.execute();
-			flag=true;
-			
-			
-		}
-		catch(Exception ex)
-		{
-			ex.printStackTrace();
-			flag=false;
-			
-		}
-	return flag;
-	}
 	
 	
 	

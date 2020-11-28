@@ -4,8 +4,8 @@
     PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
     "http://java.sun.com/dtd/web-app_2_3.dtd">
 
-<web-app>
 
+<web-app>
   <servlet>
     <servlet-name>LoginServlet</servlet-name>
     <servlet-class>com.controller.LoginServlet</servlet-class>
@@ -71,6 +71,19 @@
   <servlet-mapping>
     <servlet-name>PatientSignupServlet</servlet-name>
     <url-pattern>/patientsignup/*</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+     
+   <servlet>
+    <servlet-name>ViewAndUpdatedoctor</servlet-name>
+    <servlet-class>com.controller.ViewAndUpdatedoctor</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewAndUpdatedoctor</servlet-name>
+    <url-pattern>/viewAndUpdatedoctor/*</url-pattern>
   </servlet-mapping>
   
 </web-app>   

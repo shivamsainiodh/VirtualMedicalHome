@@ -21,9 +21,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.dao.AdminDAO;
+import com.dao.AppointMentDAO;
 import com.dao.DoctorDAO;
 import com.dao.PatientDAO;
 import com.model.Admin;
+import com.model.Appointment;
 import com.model.Doctor;
 import com.model.Patient;
 
@@ -96,6 +98,9 @@ public class LoginServlet extends HttpServlet {
 			Patient d1=new Patient();
 		ArrayList<Patient> al=new ArrayList<Patient>();
 		PatientDAO pdao=new PatientDAO();
+		
+		
+		
 	  al=pdao.getPatient();
 	  int f=1;
 	  for(Patient d:al)
@@ -122,7 +127,16 @@ public class LoginServlet extends HttpServlet {
 					DoctorDAO docdao=new DoctorDAO();
 				  al=docdao.getDoctor();
 				  int f=1;
-				  for(Doctor d:al)
+				  
+				    Appointment apoint=new Appointment();
+					AppointMentDAO adao=new AppointMentDAO();
+					ArrayList<Appointment> alappoint=adao.getAppointment();
+					mySession.setAttribute("APPOINT",alappoint);
+					
+				  
+				  
+				  
+				 for(Doctor d:al)
 				  {
 					  if(d.getDoctorId().equals(emailid) && d.getPassword().equals(pass))
 					  {     f=0;
@@ -138,6 +152,14 @@ public class LoginServlet extends HttpServlet {
 							pw.println("Doctor details are Incorrect");
 				
 				  }
+				  
+				  
+				  
+				  
+				  
+				  
+				  
+				  
 			    }
 		
 				

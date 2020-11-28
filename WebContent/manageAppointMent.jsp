@@ -12,6 +12,7 @@
 <%   HttpSession mySession;
 mySession=request.getSession(true);
 Doctor d=(Doctor)mySession.getAttribute("DOCTOR");
+ArrayList<Appointment> ap=(ArrayList<Appointment>)mySession.getAttribute("APPOINT");
 %>
 
        <!-- Latest compiled and minified CSS -->
@@ -45,11 +46,24 @@ Doctor d=(Doctor)mySession.getAttribute("DOCTOR");
                 </div>
         </nav><br><br><br><br><br>
         
-     <center>
         
-         <a href="viewDoctorProfile.jsp"><input type="button" id="btn" value="View and update Your Profile"/></a></br><br><br>
-        <a href="manageAppointMent.jsp"><input type="button" id="btn" value="Manage Appointment"/></a>
-        </center>
+        <% for(Appointment a:ap)
+        	{
+        	
+        	
+
+        	out.println(a.getDoctorId()+" "+d.getDoctorId());
+        	out.println(a.getDoctorId().equalsIgnoreCase(d.getDoctorId()));
+       
+        	
+        	if(a.getDoctorId().equals(d.getDoctorId()))
+        	{
+        		out.println("hello");
+            }
+        	}
+        %>
+        
+        
         
 </body>
 </html>

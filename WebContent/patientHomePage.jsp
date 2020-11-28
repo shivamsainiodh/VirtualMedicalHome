@@ -42,9 +42,9 @@ Patient patient=(Patient)mySession.getAttribute("PATIENT");
                 </div>
         </nav><br><br><br><br><br>
         <center>
-        <a href="listOfDoctor"><input type="button" id="btn" value="View Doctors List and Book appointment"/></a></br><br><br>
-        <a href="viewPatientProfile.jsp"><input type="button" id="btn" value="View and update Your Profile"/></a>
-        
+        <a href="listOfDoctor"><input type="button" id="btn" value="View Doctors List and Book appointment"/></a><br><br><br>
+        <a href="viewPatientProfile.jsp"><input type="button" id="btn" value="View and update Your Profile"/></a><br><br><br>
+         <a href="fileComplaint.jsp"><input type="button" id="btn" value="File Complaint"/></a><br>
         </center>
         
 </body>

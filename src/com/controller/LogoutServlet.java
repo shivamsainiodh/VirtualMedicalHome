@@ -48,12 +48,12 @@ public class LogoutServlet extends HttpServlet {
 		mySession.removeAttribute("PATIENT");
 		mySession.removeAttribute("ADMIN");
 		mySession.removeAttribute("DOCTOR");
+		mySession.removeAttribute("APPOINT");
 			mySession.invalidate();
 			//response.sendRedirect("/login.jsp");
 			
 			rdis=ctx.getRequestDispatcher("/login.jsp");
 			rdis.forward(request,response);
-	
 	}
 
 	/**

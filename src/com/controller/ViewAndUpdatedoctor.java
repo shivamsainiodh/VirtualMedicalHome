@@ -11,20 +11,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.dao.PatientDAO;
-import com.model.Patient;
+import com.dao.DoctorDAO;
+import com.model.Doctor;
 
 /**
- * Servlet implementation class UpdatePatient
+ * Servlet implementation class ViewAndUpdatedoctor
  */
-@WebServlet("/UpdatePatient")
-public class UpdatePatient extends HttpServlet {
+@WebServlet("/ViewAndUpdatedoctor")
+public class ViewAndUpdatedoctor extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UpdatePatient() {
+    public ViewAndUpdatedoctor() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -48,7 +48,8 @@ public class UpdatePatient extends HttpServlet {
 		
 		
 		
-
+		
+		
 		
 		String emailid=request.getParameter("id");
 		String pass=request.getParameter("pass");
@@ -57,18 +58,21 @@ public class UpdatePatient extends HttpServlet {
 		String address=request.getParameter("add");
 		String gender=request.getParameter("gen");
 		String phone=request.getParameter("phone");
-		String dob=request.getParameter("date");
-		String occ=request.getParameter("occ");
+		String qualification=request.getParameter("qualification");
+		int exper=Integer.parseInt(request.getParameter("ex"));
+		String speci=request.getParameter("spec");  
+		Doctor dd=new Doctor(emailid,pass,cnfPass,name,address,gender,phone,qualification,exper,speci);
+		DoctorDAO ddo=new DoctorDAO();
 		PrintWriter pw=response.getWriter();
-		 Patient pp=new Patient(emailid,pass,cnfPass,name,address,gender,phone,dob,occ);
+	 
 		RequestDispatcher rdis;
 		if(pass.equals(cnfPass))
 		{
 			
-		
-		 PatientDAO pdao=new PatientDAO();
-		 
-		  boolean flag=pdao.updatePatient(pp);
+			
+			
+			
+		  boolean flag=ddo.updateDoctor(dd);
 		  if(flag==true)
 		  {
 			  
@@ -83,7 +87,7 @@ public class UpdatePatient extends HttpServlet {
 			  		"    </head>\r\n" + 
 			  		"    <body>\r\n");
 			  		
-			  pw.println("<center><h3>Updation in  Successful</h3></br></br>");
+			  pw.println("<center><h3>Updation is  Successful</h3></br></br>");
 			  pw.println("</br><a href='logout'>Login Again</a></center></body></html>");
 			  		
 		  }
@@ -93,16 +97,7 @@ public class UpdatePatient extends HttpServlet {
 		{
 		   pw.println("<center>Hey! Password and Confirm Password Should be Same</center>");
 		}
-		
 	}
-	
-
-		
-		
-		
-		
-		
-	
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
